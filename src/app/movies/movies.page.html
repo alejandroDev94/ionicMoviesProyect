@@ -1,0 +1,27 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Movies List</ion-title>
+  </ion-toolbar>
+  <ion-toolbar no-padding >
+    <div background-size container-hearder-image style="background:rgb(69, 13, 173);">
+        <div search-bar-bcg>
+            <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterSearch($event)"></ion-searchbar>
+        </div>
+    </div>
+</ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-grid style="background: rgb(187, 56, 132);">
+    <ion-row *ngFor="let movie of movies" [routerLink]="['/movies',movie.id]" card-background-page no-padding>
+      <ion-col no-padding col-12 col-md-12 col-lg-6 >
+        <ion-card  background-size text-left >
+          <ion-img class="sizeImage" [src]="getImage(movie.poster_path)"></ion-img>
+        
+          <!--{{movie.title | slice:0:14}}-->
+        </ion-card>
+      </ion-col>
+    </ion-row >
+  </ion-grid>
+</ion-content>

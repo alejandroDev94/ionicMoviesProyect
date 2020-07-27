@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/movies"></ion-back-button>
+    </ion-buttons>
+    <ion-title>movieDetails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tertiary">
+
+  <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col class="ion-no-padding">
+          <ion-img [src]="getImage(movie.poster_path)"></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col >
+          <h1 class="ion-text-center"><b>{{movie.title}} </b></h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p class="ion-text"><b>Description: </b> {{movie.overview}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p class="ion-text"><b>Lenguaje :</b> {{movie.original_language}}</p>
+        </ion-col>
+      </ion-row> 
+      <ion-row>
+        <ion-col>
+          <p class="ion-text"><b>Fecha salida:</b> {{movie.release_date}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p class="ion-text"><b>Popularidad:</b> {{movie.popularity}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p class="ion-text"><b>Nota de la Critica:</b> {{movie.vote_average}}</p>
+        </ion-col>
+      </ion-row>
+      
+    </ion-grid>
+
+</ion-content>
